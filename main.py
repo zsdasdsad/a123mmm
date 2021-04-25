@@ -20,6 +20,16 @@ while game:
     scr.blit(ball,(0,0))
     scr.blit(p1,(-90,0))
     scr.blit(p2,(1100,10))
+    ball.rect.x += dx
+    ball.rect.y -= dy
+    if ball.rect.x > 650:
+        dx = -1
+    if ball.rect.y < 0:
+        dy = -1
+    if ball.rect.x < 0:
+        dx = -1
+    if ball.rect.y > 450:
+        dy = -1
     for e in event.get():
         if e.type == QUIT:
             game = False
